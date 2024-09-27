@@ -31,7 +31,9 @@ export default function Navbar() {
     <nav>
       <div className="h-10vh flex justify-between z-50 text-black lg:py-5 px-20 py-4 flex-1">
         <div className="flex items-center flex-1">
-          <span className="text-3xl font-bold">Logo</span>
+          <span className="text-3xl font-bold">
+            <img src="./src/assets/logo.png" alt="logo"  className="w-40"/>
+          </span>
         </div>
         <div className="lg:flex md:flex lg: flex-1 items-center justify-end font-normal hidden">
           <div className="flex-10">
