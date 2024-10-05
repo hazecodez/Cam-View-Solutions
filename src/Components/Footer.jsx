@@ -1,85 +1,194 @@
-import { FaInstagram,FaFacebook,FaWhatsapp,FaYoutube } from "react-icons/fa";
-
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FiYoutube } from "react-icons/fi";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white h-screen">
-      {/* <div className="md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[#ffffff19] py-7">
-        <h1
-          className="lg:text-4xl text-3xl md:mb-0 mb-6 lg:leading-normal font-semibold
-         md:w-2/5"
+    <footer>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        {/* Top area: Blocks */}
+        <div
+          className={`grid gap-10 py-8 sm:grid-cols-12 md:py-12
+            border-t [border-image:linear-gradient(to_right,transparent,theme(colors.slate.200),transparent)1]
+          `}
         >
-          <span className="text-teal-400">Free</span> until you are ready to
-          launch
-        </h1>
-        <div>
-          <input
-            type="text"
-            placeholder="Enter Your ph.no"
-            className="text-gray-800
-           sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Enter Your ph.no"
-            className="text-gray-800
-           sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Enter Your ph.no"
-            className="text-gray-800
-           sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
-          /><input
-          type="text"
-          placeholder="Enter Your ph.no"
-          className="text-gray-800
-         sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
-        />
-          <button
-            className="bg-teal-400 hover:bg-teal-500 duration-300 px-5 py-2.5 font-[Poppins]
-           rounded-md text-white md:w-auto w-full"
-          >
-            Request Code
-          </button>
-        </div>
-      </div> */}
+          {/* 1st block */}
+          <div className="space-y-2 sm:col-span-12 lg:col-span-4">
+            <div>
+              <Logo />
+            </div>
+            <div className="text-sm text-gray-600">
+              &copy; camviewsolutions.com - All rights reserved.
+            </div>
+          </div>
 
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
-      text-center pt-2 text-gray-400 text-sm pb-8"
-      >
-        <span>© 2020 Appy. All rights reserved.</span>
-        <span>Terms · Privacy Policy</span>
-        <div className="text-teal-500">
-          <span
-            className="p-2 cursor-pointer inline-flex items-center
-        rounded-full bg-gray-700 mx-1.5 text-xl hover:text-gray-100 hover:bg-teal-500
-        duration-300 "
-          >
-            <FaWhatsapp />
-          </span>
-          <span
-            className="p-2 cursor-pointer inline-flex items-center
-        rounded-full bg-gray-700 mx-1.5 text-xl hover:text-gray-100 hover:bg-teal-500
-        duration-300 "
-          >
-            <FaInstagram />
-          </span>
-          <span
-            className="p-2 cursor-pointer inline-flex items-center
-        rounded-full bg-gray-700 mx-1.5 text-xl hover:text-gray-100 hover:bg-teal-500
-        duration-300 "
-          >
-            <FaYoutube />
-          </span>
-          <span
-            className="p-2 cursor-pointer inline-flex items-center
-        rounded-full bg-gray-700 mx-1.5 text-xl hover:text-gray-100 hover:bg-teal-500
-        duration-300 "
-          >
-            <FaFacebook />
-          </span>
+          {/* 2nd block */}
+          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h3 className="text-sm font-medium">Product</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Integrations
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Pricing & Plans
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Changelog
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Our method
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* 3rd block */}
+          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h3 className="text-sm font-medium">Company</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  About us
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Diversity & Inclusion
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Financial statements
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* 4th block */}
+          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h3 className="text-sm font-medium">Resources</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Community
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Terms of service
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="#0"
+                >
+                  Report a vulnerability
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* 5th block */}
+          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h3 className="text-sm font-medium">Social</h3>
+            <ul className="flex gap-1">
+              <li>
+                <a
+                  className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
+                  href="#0"
+                  aria-label="Whatsapp"
+                >
+                  <FaWhatsapp />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
+                  href="#0"
+                  aria-label="Medium"
+                >
+                  <FaInstagram />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
+                  href="#0"
+                  aria-label="Github"
+                >
+                  <FaFacebook />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
+                  href="#0"
+                  aria-label="Github"
+                >
+                  <FiYoutube />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
