@@ -1,4 +1,8 @@
+import { FaYoutube } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 export default function Banner() {
+  const navigate = useNavigate();
   return (
     <div className="bg-[#ecf3f9] pt-20">
       <div className="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start">
@@ -6,19 +10,21 @@ export default function Banner() {
           <h1
             data-aos="fade-right"
             data-aos-once="true"
-            className="my-4 text-5xl font-bold leading-tight text-darken"
+            className="my-4 sm:text-5xl text-4xl font-bold leading-tight text-darken"
           >
-            Welcom to <span className="text-blue-500">Cam View</span> Solutions
+            Welcome to <span className="text-blue-500">Cam View</span> Solutions
           </h1>
           <p
             data-aos="fade-down"
             data-aos-once="true"
             data-aos-delay="300"
-            className="leading-normal text-2xl mb-8"
+            className="leading-normal sm:text-2xl mb-8"
           >
-            We are dedicated to providing high-quality solar panel installation
-            services in Kerala. We believe in generating and storing clean,
-            eco-friendly energy to help you start saving today.
+            At Cam View Solutions, we provide a wide range of advanced security
+            and technology services, including wireless intrusion systems, CCTV
+            surveillance, IT security, fiber LAN solutions, solar systems, and
+            more. Our expertise ensures reliable and innovative solutions
+            tailored to your needs.
           </p>
           <div
             data-aos="fade-up"
@@ -26,23 +32,18 @@ export default function Banner() {
             data-aos-delay="700"
             className="w-full md:flex items-center justify-center lg:justify-start md:space-x-5"
           >
-            <button className="lg:mx-0 bg-blue-500 text-white text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
+            <button
+              onClick={() => navigate("/service")}
+              className="lg:mx-0 bg-blue-500 text-white text-xl font-bold rounded-full py-4 px-9 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out"
+            >
               Learn More
             </button>
             <div className="flex items-center justify-center space-x-3 mt-5 md:mt-0 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out">
-              <button className="bg-white w-14 h-14 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 ml-2"
-                  viewBox="0 0 24 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22.5751 12.8097C23.2212 13.1983 23.2212 14.135 22.5751 14.5236L1.51538 27.1891C0.848878 27.5899 5.91205e-07 27.1099 6.25202e-07 26.3321L1.73245e-06 1.00123C1.76645e-06 0.223477 0.848877 -0.256572 1.51538 0.14427L22.5751 12.8097Z"
-                    fill="#23BDEE"
-                  />
-                </svg>
-              </button>
+              <a href="https://www.youtube.com/@camviewsolutions">
+                <button className="bg-white w-14 h-14 rounded-full flex items-center justify-center">
+                  <FaYoutube className="w-8 h-8 text-red-600" />
+                </button>
+              </a>
               <a
                 href="https://www.youtube.com/@camviewsolutions"
                 className="cursor-pointer"
@@ -101,7 +102,7 @@ export default function Banner() {
           </div> */}
         </div>
       </div>
-      <div className="text-white -mt-14 sm:-mt-24 lg:-mt-36 z-40 relative">
+      {/* <div className="text-white -mt-14 sm:-mt-24 lg:-mt-36 z-40 relative">
         <svg
           className="xl:h-40 xl:w-full"
           data-name="Layer 1"
@@ -115,7 +116,7 @@ export default function Banner() {
           ></path>
         </svg>
         <div className="bg-white w-full h-20 -mt-px"></div>
-      </div>
+      </div> */}
     </div>
   );
 }

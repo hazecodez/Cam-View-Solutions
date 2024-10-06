@@ -1,6 +1,6 @@
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
-import OurServices from "../Components/OurServices";
+import OurServices from "../Components/FeaturedServices";
 
 export default function Services() {
   return (
