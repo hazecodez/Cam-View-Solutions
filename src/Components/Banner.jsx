@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router-dom";
-
 export default function Banner() {
-  const navigate = useNavigate();
   return (
-    <div className="bg-cream pt-20">
+    <div className="bg-[#ecf3f9] pt-20">
       <div className="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start">
         <div className="flex flex-col w-full lg:w-6/12 justify-center lg:pt-24 items-start text-center lg:text-left mb-5 md:mb-0">
           <h1

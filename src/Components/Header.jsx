@@ -1,26 +1,39 @@
 import { useState } from "react";
 import Logo from "./Logo";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate()
 
   const mobileContent = (
     <>
       <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-[#ecf3f9] transition rounded-2xl">
         <ul className="text-center text-xl p-20">
-          <li className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
+          <li onClick={()=>{
+            navigate("/")
+          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
             Home
           </li>
-          <li className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
-            Why
+          <li
+          onClick={()=>{
+            navigate("/service")
+          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
+            Services
           </li>
-          <li className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
+          <li onClick={()=>{
+            navigate("/projects")
+          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
             Projects
           </li>
-          <li className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
+          <li onClick={()=>{
+            navigate("/contact")
+          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
             Contact Us
           </li>
-          <li className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
+          <li onClick={()=>{
+            navigate("/about")
+          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
             About Us
           </li>
         </ul>
@@ -62,19 +75,30 @@ export default function Header() {
 
           {/* Navbar Contents */}
           <ul className="lg:flex md:flex lg: flex-1 items-center justify-end font-normal hidden gap-12">
-            <li className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+            <li onClick={()=>{
+            navigate("/")
+          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
               Home
             </li>
-            <li className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
-              About
+            <li onClick={()=>{
+            navigate("/service")
+          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+              Services
             </li>
-            <li className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
-              Why
-            </li>
-            <li className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+            <li onClick={()=>{
+            navigate("/projects")
+          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
               Projects
             </li>
-            <li className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+            <li onClick={()=>{
+            navigate("/about")
+          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+              About
+            </li>
+
+            <li onClick={()=>{
+            navigate("/contact")
+          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
               Contact
             </li>
           </ul>
