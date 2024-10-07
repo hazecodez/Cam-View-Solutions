@@ -7,6 +7,9 @@ export default function WorkInHome() {
 
   const handleVideoPlay = () => {
     setIsVideoPlaying(true);
+    setTimeout(() => {
+      setIsVideoPlaying(false);
+    }, 20000);
   };
 
   return (
@@ -43,10 +46,9 @@ export default function WorkInHome() {
             <video
               className="rounded-xl z-40 relative"
               src="src/assets/project-1.mp4"
-              controls
               muted
               autoPlay
-              style={{ width: '100%' }}
+              style={{ width: "100%" }}
             />
           )}
 

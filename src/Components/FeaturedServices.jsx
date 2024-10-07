@@ -9,7 +9,7 @@ export default function FeaturedServices() {
   const navigate = useNavigate();
   return (
     <div className="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-y-hidden overflow-x-hidden">
-      <div data-aos="flip-up" className="max-w-xl mx-auto text-center mt-24">
+      <div data-aos="flip-up" className="max-w-xl mx-auto text-center mt-40">
         <h1 className="font-bold text-darken my-3 text-3xl">
           Our <span className="text-blue-500">Featured</span> Services.
         </h1>

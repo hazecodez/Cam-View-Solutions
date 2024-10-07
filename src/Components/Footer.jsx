@@ -1,6 +1,7 @@
-import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import {  FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
 import Logo from "./Logo";
+import { FaThreads } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -154,7 +155,7 @@ export default function Footer() {
               <li>
                 <a
                   className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
-                  href="#0"
+                  href="https://wa.link/755bhf"
                   aria-label="Whatsapp"
                 >
                   <FaWhatsapp />
@@ -163,7 +164,7 @@ export default function Footer() {
               <li>
                 <a
                   className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
-                  href="#0"
+                  href="https://www.instagram.com/camviewsolutions_/"
                   aria-label="Medium"
                 >
                   <FaInstagram />
@@ -172,16 +173,16 @@ export default function Footer() {
               <li>
                 <a
                   className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
-                  href="#0"
+                  href="https://www.threads.net/@camviewsolutions_"
                   aria-label="Github"
                 >
-                  <FaFacebook />
+                  <FaThreads />
                 </a>
               </li>
               <li>
                 <a
                   className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
-                  href="#0"
+                  href="https://www.youtube.com/@camviewsolutions"
                   aria-label="Github"
                 >
                   <FiYoutube />
