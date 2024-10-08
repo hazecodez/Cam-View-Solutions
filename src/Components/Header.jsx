@@ -22,9 +22,9 @@ export default function Header() {
             Services
           </li>
           <li onClick={()=>{
-            navigate("/projects")
+            navigate("/solar")
           }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
-            Projects
+            Solar Energy
           </li>
           <li onClick={()=>{
             navigate("/contact")
@@ -86,9 +86,9 @@ export default function Header() {
               Services
             </li>
             <li onClick={()=>{
-            navigate("/projects")
+            navigate("/solar")
           }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
-              Projects
+              Solar Energy
             </li>
             <li onClick={()=>{
             navigate("/about")

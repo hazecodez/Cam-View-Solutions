@@ -30,6 +30,7 @@ export default function FeaturedServices() {
 
       <div className="grid md:grid-cols-3 gap-14 md:gap-5 mt-20">
         <div
+        onClick={()=> navigate("/solar")}
           data-aos="fade-up"
           className="bg-white shadow-xl p-6 text-center rounded-xl"
         >
@@ -89,9 +90,15 @@ export default function FeaturedServices() {
           </p>
         </div>
       </div>
-      <button onClick={()=> navigate("/service")} data-aos="flip-up" className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block">See more services</button>
+      <button
+        onClick={() => navigate("/service")}
+        data-aos="flip-up"
+        className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
+      >
+        See more services
+      </button>
       {/* <Testimonial/> */}
-      <WorkInHome/>
+      <WorkInHome />
     </div>
   );
 }

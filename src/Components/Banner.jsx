@@ -12,7 +12,7 @@ export default function Banner() {
             data-aos-once="true"
             className="my-4 sm:text-5xl text-4xl font-bold leading-tight text-darken"
           >
-            Welcome to <span className="text-blue-500">Cam View</span> Solutions
+            Welcome to <span className="text-blue-500">Cam View</span> Solutions LLP
           </h1>
           <p
             data-aos="fade-down"

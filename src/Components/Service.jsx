@@ -72,7 +72,7 @@ export default function Service() {
       {/* Solar Energy Sysytem */}
 
       <div className="md:flex mt-40 md:space-x-10 items-start">
-        <div data-aos="fade-down" className="md:w-7/12 relative">
+        <div onClick={()=> navigate("/solar")} data-aos="fade-down" className="md:w-7/12 relative">
           <div
             style={{ background: "#33EFA0" }}
             className="w-32 h-32 rounded-full absolute z-0 left-4 -top-12 animate-pulse"
