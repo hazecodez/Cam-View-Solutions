@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AiOutlineSafety, AiOutlineStock } from "react-icons/ai";
+import { AiOutlineSafety } from "react-icons/ai";
 import { BiSolidMemoryCard } from "react-icons/bi";
 import { FaArrowRight } from "react-icons/fa";
 import { GiHealthNormal, GiReceiveMoney, GiTakeMyMoney } from "react-icons/gi";
@@ -9,20 +9,17 @@ import {
   MdOutlineSettingsRemote,
   MdSettingsRemote,
 } from "react-icons/md";
-import {
-  PiMonitorFill,
-  PiPlantFill,
-  PiSecurityCameraFill,
-} from "react-icons/pi";
+import { PiMonitorFill, PiSecurityCameraFill } from "react-icons/pi";
 import { SiOpenaccess } from "react-icons/si";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
+import WhySolar from "./WhySolar";
 
 export default function Service() {
   const [isGateVideoPlaying, setIsGateVideoPlaying] = useState(false);
   const [isCctvVideoPlaying, setIsCctvVideoPlaying] = useState(false);
   const [waterImageSwipe, setWaterImageSwipe] = useState(false);
   const [fullService, setFullService] = useState(false);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const handleCctvVideoPlay = () => {
     setIsCctvVideoPlaying(true);
@@ -71,80 +68,11 @@ export default function Service() {
 
       {/* Solar Energy Sysytem */}
 
-      <div className="md:flex mt-40 md:space-x-10 items-start">
-        <div onClick={()=> navigate("/solar")} data-aos="fade-down" className="md:w-7/12 relative">
-          <div
-            style={{ background: "#33EFA0" }}
-            className="w-32 h-32 rounded-full absolute z-0 left-4 -top-12 animate-pulse"
-          ></div>
-          <div
-            style={{ background: "#33D9EF" }}
-            className="w-5 h-5 rounded-full absolute z-0 left-36 -top-12 animate-ping"
-          ></div>
-          <img
-            className="relative rounded-lg z-40 sm:w-5/6 floating"
-            src="src/assets/solar-4.png"
-            alt=""
-          />
-
-          
-
-          <div
-            style={{ background: "#5B61EB" }}
-            className="w-36 h-36 rounded-full absolute z-0 right-16 -bottom-1 animate-pulse"
-          ></div>
-          <div
-            style={{ background: "#F56666" }}
-            className="w-5 h-5 rounded-full absolute z-0 right-52 bottom-1 animate-ping"
-          ></div>
-        </div>
-        <div
-          data-aos="fade-down"
-          className="md:w-5/12 mt-20 md:mt-0 text-gray-500"
-        >
-          <h1 className="text-2xl font-semibold text-darken lg:pr-20">
-            <span className="text-blue-500">Solar Energy Systems: </span>
-            Powering a Sustainable Future
-          </h1>
-          <div className="flex items-center space-x-5 my-5">
-            <div className="flex-shrink bg-white shadow-lg rounded-full p-3 flex items-center justify-center">
-              <PiPlantFill className="h-5 w-5 text-green-500" />
-            </div>
-            <p>
-              Eco-Friendly – Harness clean, renewable energy to reduce your
-              carbon footprint and contribute to a greener planet.
-            </p>
-          </div>
-          <div className="flex items-center space-x-5 my-5">
-            <div className="flex-shrink bg-white shadow-lg rounded-full p-3 flex items-center justify-center">
-              <GiReceiveMoney className="h-5 w-5 text-yellow-500" />
-            </div>
-            <p>
-              Cost-Efficient – Save on energy bills with long-term cost savings
-              as solar power reduces reliance on traditional electricity.
-            </p>
-          </div>
-          <div className="flex items-center space-x-5 my-5">
-            <div className="flex-shrink bg-white shadow-lg rounded-full p-3 flex items-center justify-center">
-              <MdEngineering className="h-5 w-5 text-blue-500" />
-            </div>
-            <p>
-              Low Maintenance – Once installed, solar panels require minimal
-              upkeep, providing hassle-free energy for years.
-            </p>
-          </div>
-          <div className="flex items-center space-x-5 my-5">
-            <div className="flex-shrink bg-white shadow-lg rounded-full p-3 flex items-center justify-center">
-              <AiOutlineStock className="h-5 w-5 text-green-500" />
-            </div>
-            <p>
-              Future-Ready Investment – Solar systems are a forward-thinking
-              investment that increases property value and prepares you for a
-              sustainable future.
-            </p>
-          </div>
-        </div>
-      </div>
+      <WhySolar
+        head1={"Solar Energy Systems:"}
+        head2={"Powering a Sustainable Future"}
+        image={"src/assets/solar-4.png"}
+      />
 
       {/* CCTV Integration */}
 
@@ -446,13 +374,15 @@ export default function Service() {
           ></div>
         </div>
       </div>
-      <button
-        onClick={handleFullServiceShow}
-        data-aos="flip-up"
-        className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
-      >
-        See more services
-      </button>
+      {!fullService && (
+        <button
+          onClick={handleFullServiceShow}
+          data-aos="flip-up"
+          className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
+        >
+          See more services
+        </button>
+      )}
     </div>
   );
 }
