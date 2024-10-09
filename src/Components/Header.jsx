@@ -28,6 +28,11 @@ export default function Header() {
             Solar Energy
           </li>
           <li onClick={()=>{
+            navigate("/projects")
+          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
+            Projects
+          </li>
+          <li onClick={()=>{
             navigate("/contact")
           }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
             Contact Us
@@ -89,7 +94,12 @@ export default function Header() {
             <li onClick={()=>{
             navigate("/solar")
           }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
-              Solar Energy
+              Solar
+            </li>
+            <li onClick={()=>{
+            navigate("/projects")
+          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+              Projects
             </li>
             <li onClick={()=>{
             navigate("/about")

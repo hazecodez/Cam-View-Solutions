@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineSafety } from "react-icons/ai";
 import { BiSolidMemoryCard } from "react-icons/bi";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaMinus, FaPlus } from "react-icons/fa";
 import { GiHealthNormal, GiReceiveMoney, GiTakeMyMoney } from "react-icons/gi";
 import {
   MdEngineering,
@@ -11,15 +11,16 @@ import {
 } from "react-icons/md";
 import { PiMonitorFill, PiSecurityCameraFill } from "react-icons/pi";
 import { SiOpenaccess } from "react-icons/si";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import WhySolar from "./WhySolar";
 
 export default function Service() {
   const [isGateVideoPlaying, setIsGateVideoPlaying] = useState(false);
   const [isCctvVideoPlaying, setIsCctvVideoPlaying] = useState(false);
   const [waterImageSwipe, setWaterImageSwipe] = useState(false);
-  const [fullService, setFullService] = useState(false);
-  //const navigate = useNavigate();
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleCctvVideoPlay = () => {
     setIsCctvVideoPlaying(true);
@@ -36,9 +37,90 @@ export default function Service() {
   const handleWaterSwipe = () => {
     setWaterImageSwipe(!waterImageSwipe);
   };
-  const handleFullServiceShow = () => {
-    setFullService(true);
+
+  const toggleDescription = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
+
+  const items = [
+    {
+      title: "Inverter and Battery",
+      desc: `Our inverter and battery systems ensure uninterrupted
+       power supply by efficiently storing and converting solar energy for
+        use when you need it most. These systems provide reliable backup during
+         outages and help optimize energy usage, ensuring you get the maximum benefit
+          from your solar panels, even when the sun isn’t shining.`,
+    },
+    {
+      title: "Wireless Intrusion Security Systems",
+      desc: `Our wireless intrusion security systems provide cutting-edge 
+      protection for your home or business. These systems detect unauthorized access
+       in real-time, offering a robust, wire-free solution that ensures continuous monitoring
+        and alerts. With easy installation and advanced features, you can safeguard your property 
+        with maximum efficiency and minimal disruption.`,
+    },
+    {
+      title: "IT Security and Network Solutions",
+      desc: `Our IT security and network solutions safeguard
+       your business from cyber threats while ensuring seamless
+        connectivity. We provide comprehensive services, including
+         network setup, data protection, firewalls, and monitoring,
+          to protect your digital assets and maintain secure, reliable
+           operations. Trust us to keep your systems safe and efficient.`,
+    },
+    {
+      title: "GPON/GEPON-FTTH Fiber Lan Solutions",
+      desc: `Our GPON/GEPON-FTTH fiber LAN solutions deliver 
+      high-speed, reliable connectivity for residential and 
+      commercial properties. By utilizing fiber-to-the-home (FTTH) 
+      technology, we provide faster internet speeds, enhanced bandwidth,
+       and seamless data transmission, ensuring optimal performance for
+        all your communication and network needs.`,
+    },
+    {
+      title: "Voice Solutions",
+      desc: `Our voice solutions offer crystal-clear,
+       reliable communication systems tailored to meet
+        the needs of businesses and residential clients.
+         From VoIP services to traditional telephony, 
+         we provide scalable and efficient solutions that
+          ensure seamless voice communication, improving 
+          connectivity and productivity.`,
+    },
+    {
+      title: "Video Door Phone",
+      desc: `Our video door phone systems provide enhanced security
+       and convenience, allowing you to see and communicate with 
+       visitors before granting access. With high-quality video and
+        audio capabilities, these systems offer real-time monitoring
+         and control, ensuring the safety of your home or business with ease.`,
+    },
+    {
+      title: "Public Addressing System",
+      desc: `Our public addressing systems deliver clear, 
+      powerful sound for effective communication in large spaces.
+       Whether for announcements, emergency alerts, or general messaging,
+        these systems are designed to provide reliable audio coverage,
+         ensuring that your message is heard loud and clear across any environment.`,
+    },
+    {
+      title: "Access Control System",
+      desc: `Our access control systems offer secure and 
+      flexible management of entry points for both residential
+       and commercial properties. With advanced technology such
+        as keycards, biometrics, and remote access, you can monitor
+         and control who enters your premises, enhancing security and 
+         providing peace of mind.`,
+    },
+    {
+      title: "BMS and IOT Solutions",
+      desc: `Our Building Management Systems (BMS) and IoT solutions integrate
+       smart technology to automate and optimize various building operations, 
+       including lighting, HVAC, and security. These systems offer real-time 
+       monitoring and control, enhancing efficiency, reducing energy consumption, 
+       and providing a connected, intelligent environment for your home or business.`,
+    },
+  ];
   return (
     <div className="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-y-hidden overflow-x-hidden">
       <div data-aos="flip-up" className=" mx-auto text-center sm:mt-36 mt-24">
@@ -340,7 +422,6 @@ export default function Service() {
             className="w-5 h-5 rounded-full absolute z-0 left-36 -top-12 animate-ping"
           ></div>
 
-          {/* Both images have fixed width, height, and object-fit */}
           {!waterImageSwipe ? (
             <img
               className="relative rounded-lg z-40 sm:w-5/6 floating"
@@ -374,15 +455,40 @@ export default function Service() {
           ></div>
         </div>
       </div>
-      {!fullService && (
-        <button
-          onClick={handleFullServiceShow}
-          data-aos="flip-up"
-          className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
-        >
-          See more services
-        </button>
-      )}
+
+      <div className="px-5 py-3 pt-24">
+        {items.map((item, index) => (
+          <div key={index} className="mb-5">
+            <div className="bg-white w-full h-16 rounded-md flex justify-between items-center sm:pr-12 sm:pl-12 pr-6 pl-6">
+              <p className="text-gray-600 font-thin">{item.title}</p>
+              <button onClick={() => toggleDescription(index)}>
+                {openIndex === index ? (
+                  <FaMinus className="w-5 h-5 text-blue-500" />
+                ) : (
+                  <FaPlus className="w-5 h-5 text-blue-500" />
+                )}
+              </button>
+            </div>
+
+            <div
+              className={`bg-gray-50 rounded-md overflow-hidden transition-all duration-1000 ${
+                openIndex === index ? "max-h-60" : "max-h-0"
+              }`}
+            >
+              {openIndex === index && (
+                <p className="p-4 text-gray-600">{item.desc}</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+      <button
+        onClick={() => navigate("/contact")}
+        data-aos="flip-up"
+        className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
+      >
+        Contact Us
+      </button>
     </div>
   );
 }

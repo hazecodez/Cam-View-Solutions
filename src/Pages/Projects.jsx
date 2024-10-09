@@ -3,7 +3,7 @@ import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 
 
-export default function Feedback() {
+export default function Projects() {
   return (
     <div className="bg-[#ecf3f9]">
       <Header />

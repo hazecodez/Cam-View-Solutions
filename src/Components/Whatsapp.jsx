@@ -31,7 +31,7 @@ export default function Whatsapp() {
             </a>
           </div>
           <div className="fixed z-50  bottom-24 right-4  sm:bottom-24 sm:right-12">
-            <a href="">
+            <a href="tel:918606548795">
               <div className="flex justify-end bg-green-800 p-3 text-slate-50 shadow-lg rounded-full ">
                 <FaPhone className="w-7 h-7 " />
               </div>

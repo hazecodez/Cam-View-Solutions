@@ -1,6 +1,8 @@
 import { PiSolarPanelDuotone } from "react-icons/pi";
+import { useNavigate } from "react-router-dom";
 
 export default function SolarFunctionality() {
+  const navigate = useNavigate()
   const functionalities = [
     {
       head: "Documentation & Contracts",
@@ -83,6 +85,13 @@ export default function SolarFunctionality() {
           </div>
         ))}
       </div>
+      <button
+          onClick={()=> navigate("/projects")}
+          data-aos="flip-up"
+          className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
+        >
+          See our projects
+        </button>
     </>
   );
 }
