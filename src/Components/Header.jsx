@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  
 
   const mobileContent = (
     <>
