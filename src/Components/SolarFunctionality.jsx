@@ -85,13 +85,29 @@ export default function SolarFunctionality() {
           </div>
         ))}
       </div>
-      <button
+      <div className="flex flex-col bg-blue-200 mt-10 rounded-lg sm:items-center ">
+     
+        <h1 className="pt-12 text-4xl">
+        Get a quote for your upcoming project
+        </h1>
+       <div className="flex justify-between gap-12">
+       <button
+          onClick={()=> navigate("/contact")}
+          data-aos="flip-up"
+          className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
+        >
+          Contact Us
+        </button>
+        <button
           onClick={()=> navigate("/projects")}
           data-aos="flip-up"
           className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
         >
           See our projects
         </button>
+       </div>
+      </div>
+        
     </>
   );
 }

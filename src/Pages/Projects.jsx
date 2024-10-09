@@ -1,14 +1,13 @@
-import FeaturedServices from "../Components/FeaturedServices";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
-
+import ShowProjects from "../Components/ShowProjects";
 
 export default function Projects() {
   return (
     <div className="bg-[#ecf3f9]">
       <Header />
-      <FeaturedServices/>
+      <ShowProjects />
       <Footer />
     </div>
-  )
+  );
 }
