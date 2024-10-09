@@ -1,63 +1,80 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Logo from "./Logo";
-import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   const mobileContent = (
-    <>
-      <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-[#ecf3f9] transition rounded-2xl">
-        <ul className="text-center text-xl p-20">
-          <li onClick={()=>{
-            navigate("/")
-          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
-            Home
-          </li>
-          <li
-          onClick={()=>{
-            navigate("/service")
-          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
-            Services
-          </li>
-          <li onClick={()=>{
-            navigate("/solar")
-          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
-            Solar Energy
-          </li>
-          <li onClick={()=>{
-            navigate("/projects")
-          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
-            Projects
-          </li>
-          <li onClick={()=>{
-            navigate("/contact")
-          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
-            Contact Us
-          </li>
-          <li onClick={()=>{
-            navigate("/about")
-          }} className="my-4 py-4 border-b border-slate-800 hover:rounded hover:text-[#2F79B8] cursor-pointer">
-            About Us
-          </li>
-        </ul>
-      </div>
-    </>
+    <div className="lg:hidden block absolute top-16 w-full left-0 right-0 bg-[#ecf3f9] transition rounded-2xl">
+      <ul className="text-center text-xl p-20">
+        <li
+          onClick={() => navigate("/")}
+          className={`my-4 py-4 border-b border-slate-800 cursor-pointer ${
+            isActive("/") ? "text-[#2F79B8]" : ""
+          }`}
+        >
+          Home
+        </li>
+        <li
+          onClick={() => navigate("/service")}
+          className={`my-4 py-4 border-b border-slate-800 cursor-pointer ${
+            isActive("/service") ? "text-[#2F79B8]" : ""
+          }`}
+        >
+          Services
+        </li>
+        <li
+          onClick={() => navigate("/solar")}
+          className={`my-4 py-4 border-b border-slate-800 cursor-pointer ${
+            isActive("/solar") ? "text-[#2F79B8]" : ""
+          }`}
+        >
+          Solar Energy
+        </li>
+        <li
+          onClick={() => navigate("/projects")}
+          className={`my-4 py-4 border-b border-slate-800 cursor-pointer ${
+            isActive("/projects") ? "text-[#2F79B8]" : ""
+          }`}
+        >
+          Projects
+        </li>
+        <li
+          onClick={() => navigate("/contact")}
+          className={`my-4 py-4 border-b border-slate-800 cursor-pointer ${
+            isActive("/contact") ? "text-[#2F79B8]" : ""
+          }`}
+        >
+          Contact Us
+        </li>
+        <li
+          onClick={() => navigate("/about")}
+          className={`my-4 py-4 border-b border-slate-800 cursor-pointer ${
+            isActive("/about") ? "text-[#2F79B8]" : ""
+          }`}
+        >
+          About Us
+        </li>
+      </ul>
+    </div>
   );
 
   return (
     <header className="fixed top-2 z-50 w-full md:top-6">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-sm before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(theme(colors.gray.100),theme(colors.gray.200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
+        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-sm">
           {/* Cam View Logo */}
           <div className="flex flex-1 items-center">
             <Logo />
           </div>
           {/* Mobile view Content */}
           <div>{open && mobileContent}</div>
-          {/* HandBurger Button for show contents */}
+          {/* Hamburger Button for show contents */}
           <button
             className="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
             onClick={() => setOpen(!open)}
@@ -81,35 +98,52 @@ export default function Header() {
 
           {/* Navbar Contents */}
           <ul className="lg:flex md:flex lg: flex-1 items-center justify-end font-normal hidden gap-12">
-            <li onClick={()=>{
-            navigate("/")
-          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+            <li
+              onClick={() => navigate("/")}
+              className={`hover:text-[#2F79B8] transition cursor-pointer ${
+                isActive("/") ? "text-[#2F79B8] border-b-4" : ""
+              }`}
+            >
               Home
             </li>
-            <li onClick={()=>{
-            navigate("/service")
-          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+            <li
+              onClick={() => navigate("/service")}
+              className={`hover:text-[#2F79B8] transition cursor-pointer ${
+                isActive("/service") ? "text-[#2F79B8] border-b-4" : ""
+              }`}
+            >
               Services
             </li>
-            <li onClick={()=>{
-            navigate("/solar")
-          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+            <li
+              onClick={() => navigate("/solar")}
+              className={`hover:text-[#2F79B8] transition cursor-pointer ${
+                isActive("/solar") ? "text-[#2F79B8] border-b-4" : ""
+              }`}
+            >
               Solar
             </li>
-            <li onClick={()=>{
-            navigate("/projects")
-          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+            <li
+              onClick={() => navigate("/projects")}
+              className={`hover:text-[#2F79B8] transition cursor-pointer ${
+                isActive("/projects") ? "text-[#2F79B8] border-b-4" : ""
+              }`}
+            >
               Projects
             </li>
-            <li onClick={()=>{
-            navigate("/about")
-          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+            <li
+              onClick={() => navigate("/about")}
+              className={`hover:text-[#2F79B8] transition cursor-pointer ${
+                isActive("/about") ? "text-[#2F79B8] border-b-4" : ""
+              }`}
+            >
               About
             </li>
-
-            <li onClick={()=>{
-            navigate("/contact")
-          }} className="hover:text-[#2F79B8] transition border-b-2 border-slate-900 hover:border-[#2F79B8] cursor-pointer">
+            <li
+              onClick={() => navigate("/contact")}
+              className={`hover:text-[#2F79B8] transition cursor-pointer ${
+                isActive("/contact") ? "text-[#2F79B8] border-b-4" : ""
+              }`}
+            >
               Contact
             </li>
           </ul>

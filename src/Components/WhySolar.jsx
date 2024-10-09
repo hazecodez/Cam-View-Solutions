@@ -3,8 +3,9 @@ import { GiReceiveMoney } from "react-icons/gi";
 import { MdEngineering } from "react-icons/md";
 import { PiPlantFill } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function WhySolar({head1,head2,image}) {
+export default function WhySolar({ head1, head2, image }) {
   const navigate = useNavigate();
   return (
     <div className="md:flex mt-40 md:space-x-10 items-start">
@@ -85,3 +86,9 @@ export default function WhySolar({head1,head2,image}) {
     </div>
   );
 }
+
+WhySolar.propTypes = {
+  head1: PropTypes.string.isRequired,
+  head2: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
