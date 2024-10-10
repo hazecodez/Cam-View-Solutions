@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaAddressBook, FaPhone, FaWhatsapp } from "react-icons/fa";
-import { FaX } from "react-icons/fa6";
+import { ImCross } from "react-icons/im";
 
 export default function Whatsapp() {
   const [click, setClick] = useState(false);
@@ -39,7 +39,7 @@ export default function Whatsapp() {
             {!click ? (
               <FaAddressBook className="w-7 h-7 " />
             ) : (
-              <FaX className="w-7 h-7 " />
+              <ImCross className="w-7 h-7 " />
             )}
           </div>
         </a>
