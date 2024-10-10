@@ -6,13 +6,14 @@ export default function SolarHeader() {
         Empowering Your Future
       </h1>
       <p className="leading-relaxed text-gray-500">
-        At <span className="font-bold">Cam View Solutions LLP,</span> we specialize
-        in providing reliable solar panel installations across Kerala. Solar
-        energy offers a sustainable and cost-efficient way to power your home or
-        business, helping you reduce energy bills while contributing to a
-        greener planet. Discover the importance of solar energy, learn about our
-        seamless installation process, and explore the successful projects we’ve
-        completed to see how we can help you harness the power of the sun.
+        At <span className="font-bold">Cam View Solutions LLP,</span> we
+        specialize in providing reliable solar panel installations across
+        Kerala. Solar energy offers a sustainable and cost-efficient way to
+        power your home or business, helping you reduce energy bills while
+        contributing to a greener planet. Discover the importance of solar
+        energy, learn about our seamless installation process, and explore the
+        successful projects we’ve completed to see how we can help you harness
+        the power of the sun.
       </p>
     </div>
   );

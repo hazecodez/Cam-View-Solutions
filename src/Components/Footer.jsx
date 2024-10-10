@@ -1,4 +1,4 @@
-import {  FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
 import Logo from "./Logo";
 import { FaThreads } from "react-icons/fa6";

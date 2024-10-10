@@ -9,7 +9,6 @@ export default function Projects() {
       <div className="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-y-hidden overflow-x-hidden">
         <ShowProjects />
       </div>
-
       <Footer />
     </div>
   );

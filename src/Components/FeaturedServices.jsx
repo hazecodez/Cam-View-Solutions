@@ -2,7 +2,6 @@ import { BiSolidCctv } from "react-icons/bi";
 import { MdSettingsRemote } from "react-icons/md";
 import { PiSolarPanelDuotone } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
-// import Testimonial from "./Testimonial";
 import WorkInHome from "./WorkInHome";
 
 export default function FeaturedServices() {
@@ -30,7 +29,7 @@ export default function FeaturedServices() {
 
       <div className="grid md:grid-cols-3 gap-14 md:gap-5 mt-20">
         <div
-        onClick={()=> navigate("/solar")}
+          onClick={() => navigate("/solar")}
           data-aos="fade-up"
           className="bg-white shadow-xl p-6 text-center rounded-xl"
         >
@@ -97,7 +96,6 @@ export default function FeaturedServices() {
       >
         See more services
       </button>
-      {/* <Testimonial/> */}
       <WorkInHome />
     </div>
   );
