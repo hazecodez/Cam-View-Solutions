@@ -1,9 +1,18 @@
 import { BiSolidRightArrow } from "react-icons/bi";
 import Button from "./Button";
 import { PiPhoneCallThin } from "react-icons/pi";
+import { useState } from "react";
 // import { CiMail } from "react-icons/ci";
 
 export default function ContactUs() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  // const [nameError,setNameError] = useState("");
+  // const [emailError,setEmailError] = useState("");
+  // const [messageError,setMessageError] = useState("");
+
+  const handleSubmit = () => {};
   return (
     <>
       <div className="md:flex mt-40 md:space-x-10 items-start bg-white rounded-md p-10">
@@ -70,19 +79,37 @@ export default function ContactUs() {
           <br />
           <hr />
           <br />
-          <form action="" className="p-4">
+          <form className="p-4">
             <p>FULL NAME *</p>
-            <input type="text" className="w-full mb-5 border-none bg-gray-50" />
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              name="name"
+              type="text"
+              className="w-full mb-5 border-none bg-gray-50"
+            />
             <p>EMAIL *</p>
-            <input type="text" className="w-full mb-5 border-none bg-gray-50" />
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              type="email"
+              className="w-full mb-5 border-none bg-gray-50"
+            />
             <p>MESSAGE *</p>
             <textarea
-              name=""
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              name="message"
               id=""
               rows="4"
               className="w-full mb-5 border-none bg-gray-50"
             ></textarea>
-            <button className="bg-blue-500 text-white w-full h-12 font-mono text-2xl hover:bg-white hover:text-black transition-colors duration-700">
+            <button
+              onClick={handleSubmit}
+              type="submit"
+              className="bg-blue-500 text-white w-full h-12 font-mono text-2xl hover:bg-white hover:text-black transition-colors duration-700"
+            >
               SUBMIT
             </button>
           </form>
