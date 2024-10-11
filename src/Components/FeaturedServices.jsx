@@ -3,6 +3,7 @@ import { MdSettingsRemote } from "react-icons/md";
 import { PiSolarPanelDuotone } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 import WorkInHome from "./WorkInHome";
+import Button from "./Button";
 
 export default function FeaturedServices() {
   const navigate = useNavigate();
@@ -89,13 +90,7 @@ export default function FeaturedServices() {
           </p>
         </div>
       </div>
-      <button
-        onClick={() => navigate("/service")}
-        data-aos="flip-up"
-        className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
-      >
-        See more services
-      </button>
+      <Button name="See more services" link="/service"/>
       <WorkInHome />
     </div>
   );

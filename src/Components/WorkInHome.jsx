@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 export default function WorkInHome() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const navigate = useNavigate();
 
   const handleVideoPlay = () => {
     setIsVideoPlaying(true);
@@ -75,13 +74,7 @@ export default function WorkInHome() {
           <div className="bg-blue-500 w-40 h-40 floating absolute rounded-lg z-10 -bottom-3 -right-3"></div>
         </div>
       </div>
-      <button
-        onClick={() => navigate("/projects")}
-        data-aos="flip-up"
-        className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
-      >
-        See more projects
-      </button>
+      <Button name="See more projects" link="/projects" />
     </>
   );
 }

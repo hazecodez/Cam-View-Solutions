@@ -1,8 +1,7 @@
 import { PiSolarPanelDuotone } from "react-icons/pi";
-import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 export default function SolarFunctionality() {
-  const navigate = useNavigate();
   const functionalities = [
     {
       head: "Documentation & Contracts",
@@ -90,20 +89,8 @@ export default function SolarFunctionality() {
           Get a quote for your upcoming project
         </h1>
         <div className="flex justify-between gap-12">
-          <button
-            onClick={() => navigate("/contact")}
-            data-aos="flip-up"
-            className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
-          >
-            Contact Us
-          </button>
-          <button
-            onClick={() => navigate("/projects")}
-            data-aos="flip-up"
-            className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
-          >
-            See our projects
-          </button>
+          <Button name="Contact Us" link="/contact" />
+          <Button name="See our projects" link="/projects" />
         </div>
       </div>
     </>

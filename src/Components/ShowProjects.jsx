@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { ImCross } from "react-icons/im";
-import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 export default function ShowProjects() {
   const [isModalOpen, setIsModalOpen] = useState(null);
-  const navigate = useNavigate();
-
   const openModal = (image) => {
     setIsModalOpen(image);
   };
@@ -177,13 +175,7 @@ export default function ShowProjects() {
         </div>
       )}
 
-      <button
-        onClick={() => navigate("/contact")}
-        data-aos="flip-up"
-        className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
-      >
-        Contact Us
-      </button>
+      <Button name="Contact Us" link="/contact" />
     </>
   );
 }
