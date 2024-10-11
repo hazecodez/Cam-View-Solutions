@@ -155,7 +155,7 @@ export default function Footer() {
               <li>
                 <a
                   className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
-                  href="https://wa.link/755bhf"
+                  href="https://wa.link/c4t9q5"
                   aria-label="Whatsapp"
                 >
                   <FaWhatsapp />
