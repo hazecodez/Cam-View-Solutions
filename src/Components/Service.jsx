@@ -11,16 +11,14 @@ import {
 } from "react-icons/md";
 import { PiMonitorFill, PiSecurityCameraFill } from "react-icons/pi";
 import { SiOpenaccess } from "react-icons/si";
-import { useNavigate } from "react-router-dom";
 import WhySolar from "./WhySolar";
+import Button from "./Button";
 
 export default function Service() {
   const [isGateVideoPlaying, setIsGateVideoPlaying] = useState(false);
   const [isCctvVideoPlaying, setIsCctvVideoPlaying] = useState(false);
   const [waterImageSwipe, setWaterImageSwipe] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
-
-  const navigate = useNavigate();
 
   const handleCctvVideoPlay = () => {
     setIsCctvVideoPlaying(true);
@@ -482,13 +480,7 @@ export default function Service() {
           </div>
         ))}
       </div>
-      <button
-        onClick={() => navigate("/contact")}
-        data-aos="flip-up"
-        className="px-5 py-3 border border-blue-500 text-blue-500 font-medium my-14 focus:outline-none transform transition hover:scale-110 duration-300 ease-in-out rounded-full mx-auto block"
-      >
-        Contact Us
-      </button>
+      <Button link="/contact" name="Contact Us" />
     </div>
   );
 }
