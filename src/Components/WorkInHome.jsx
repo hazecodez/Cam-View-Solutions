@@ -38,13 +38,13 @@ export default function WorkInHome() {
           {!isVideoPlaying ? (
             <img
               className="rounded-xl z-40 relative"
-              src="src/assets/promo-project.png"
+              src="/assets/promo-project.png"
               alt="Project"
             />
           ) : (
             <video
               className="rounded-xl z-40 relative"
-              src="src/assets/project-1.mp4"
+              src="/assets/project-1.mp4"
               muted
               autoPlay
               style={{ width: "100%" }}

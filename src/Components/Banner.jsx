@@ -60,7 +60,7 @@ export default function Banner() {
             data-aos="fade-up"
             data-aos-once="true"
             className="w-10/12 mx-auto 2xl:-mb-20"
-            src="src/assets/man.png"
+            src="/assets/man.png"
           />
           {/* <!-- calendar --> */}
           {/* <div

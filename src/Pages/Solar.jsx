@@ -10,7 +10,7 @@ export default function Solar() {
       <Header />
       <div className="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-y-hidden overflow-x-hidden">
         <SolarHeader />
-        <WhySolar head1={"Why Solar Energy is the Future?"} head2={""} image={"src/assets/solar-11.jpg"}/>
+        <WhySolar head1={"Why Solar Energy is the Future?"} head2={""} image={"/assets/solar-11.jpg"}/>
         <SolarFunctionality/>
       </div>
       <Footer />

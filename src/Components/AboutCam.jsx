@@ -26,7 +26,7 @@ export default function AboutCam() {
           </p>
           <img
             className="relative rounded-lg z-40 sm:w-5/6 floating pt-8"
-            src="src/assets/about.webp"
+            src="/assets/about.webp"
             alt=""
           />
         </div>

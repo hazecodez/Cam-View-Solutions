@@ -151,7 +151,7 @@ export default function Service() {
       <WhySolar
         head1={"Solar Energy Systems:"}
         head2={"Powering a Sustainable Future"}
-        image={"src/assets/solar-4.png"}
+        image={"/assets/solar-4.png"}
       />
 
       {/* CCTV Integration */}
@@ -215,13 +215,13 @@ export default function Service() {
           {!isCctvVideoPlaying ? (
             <img
               className="relative rounded-lg z-40 sm:w-5/6 floating"
-              src="src/assets/cctv-1.png"
+              src="/assets/cctv-1.png"
               alt=""
             />
           ) : (
             <video
               className="rounded-xl z-40 relative sm:w-96 sm:h-96"
-              src="src/assets/cctv-video.mp4"
+              src="/assets/cctv-video.mp4"
               muted
               autoPlay
               loop
@@ -274,13 +274,13 @@ export default function Service() {
           {!isGateVideoPlaying ? (
             <img
               className="relative rounded-lg z-40 sm:w-5/6 floating"
-              src="src/assets/gate-2.png"
+              src="/assets/gate-2.png"
               alt=""
             />
           ) : (
             <video
               className="rounded-xl z-40 relative sm:w-96 sm:h-96"
-              src="src/assets/project-2.mp4"
+              src="/assets/project-2.mp4"
               muted
               autoPlay
               loop
@@ -423,14 +423,14 @@ export default function Service() {
           {!waterImageSwipe ? (
             <img
               className="relative rounded-lg z-40 sm:w-5/6 floating"
-              src="src/assets/water-1.jpg"
+              src="/assets/water-1.jpg"
               alt=""
               style={{ width: "600px", height: "400px", objectFit: "cover" }}
             />
           ) : (
             <img
               className="relative rounded-lg z-40 sm:w-5/6 floating"
-              src="src/assets/water-2.heic"
+              src="/assets/water-2.heic"
               alt=""
               style={{ width: "600px", height: "400px", objectFit: "cover" }}
             />

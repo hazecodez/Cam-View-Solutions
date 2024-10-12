@@ -61,7 +61,7 @@ export default function ContactUs() {
       <div className="md:flex mt-40 md:space-x-10 items-start">
         <img
           className="relative rounded-lg z-40 sm:w-3/6 floating pt-8"
-          src="src/assets/contact.webp"
+          src="/assets/contact.webp"
           alt=""
         />
         <div
