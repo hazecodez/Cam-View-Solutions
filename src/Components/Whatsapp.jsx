@@ -12,7 +12,7 @@ export default function Whatsapp() {
           click ? "translate-y-[-160px] opacity-100" : "translate-y-0 opacity-0"
         }`}
       >
-        <a href="https://wa.link/jjbdcr">
+        <a href="https://wa.link/52eclc">
           <div className="flex justify-end bg-green-800 p-3 hover:transition-colors hover:bg-blue-500 duration-500 text-slate-50 shadow-lg rounded-full ">
             <FaWhatsapp className="w-7 h-7 " />
           </div>
