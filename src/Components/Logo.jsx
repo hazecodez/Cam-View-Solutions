@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Logo() {
+  const navigate = useNavigate()
   return (
-    <p href="/" className="inline-flex" aria-label="Cruip">
+    <p onClick={()=> navigate("/")} className="inline-flex" aria-label="Cruip">
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
         <path
           className="fill-blue-500"
