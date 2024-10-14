@@ -13,7 +13,7 @@ export default function Banner() {
             </p>
             <img src="/assets/camview.png" alt="" />
             <p className="mb-4  text-4xl font-bold leading-tight text-darken">
-              Solutions LLP
+              Solutions LLP 
             </p>
           </div>
             {/* <h1
