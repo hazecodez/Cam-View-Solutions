@@ -16,7 +16,14 @@ export default function Banner() {
               Solutions LLP
             </p>
           </div>
-
+            {/* <h1
+            data-aos="fade-right"
+            data-aos-once="true"
+            className="my-4 sm:text-3xl text-3xl font-bold leading-tight text-darken"
+          >
+             <br /><span className="text-blue-500 text-7xl">Cam View</span><br /> Solutions
+            LLP
+          </h1> */}
           <p
             data-aos="fade-down"
             data-aos-once="true"
