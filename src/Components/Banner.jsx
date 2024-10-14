@@ -7,14 +7,16 @@ export default function Banner() {
     <div className="bg-[#ecf3f9] pt-20">
       <div className="max-w-screen-xl px-8 mx-auto flex flex-col lg:flex-row items-start">
         <div className="flex flex-col w-full lg:w-6/12 justify-center lg:pt-24 items-start text-center lg:text-left mb-5 md:mb-0">
-          <h1
-            data-aos="fade-right"
-            data-aos-once="true"
-            className="my-4 sm:text-5xl text-4xl font-bold leading-tight text-darken"
-          >
-            Welcome to <span className="text-blue-500">Cam View</span> Solutions
-            LLP
-          </h1>
+          <div className="w-full flex lg:items-start items-center flex-col">
+            <p className="  text-2xl font-bold leading-tight text-darken">
+              Welcome to
+            </p>
+            <img src="/assets/camview.png" alt="" />
+            <p className="mb-4  text-4xl font-bold leading-tight text-darken">
+              Solutions LLP
+            </p>
+          </div>
+
           <p
             data-aos="fade-down"
             data-aos-once="true"
