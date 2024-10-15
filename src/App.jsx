@@ -6,10 +6,12 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Projects from "./Pages/Projects";
 import "./Components/Css/style.css";
+import ScrollToTop from "./Components/ScrollToTop";
 
 export default function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/service" element={<Services />} />
