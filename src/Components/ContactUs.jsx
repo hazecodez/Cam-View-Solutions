@@ -1,18 +1,28 @@
 import { BiSolidRightArrow } from "react-icons/bi";
 import Button from "./Button";
 import { PiPhoneCallThin } from "react-icons/pi";
-import { useState } from "react";
+import * as Yup from "yup";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 // import { CiMail } from "react-icons/ci";
 
 export default function ContactUs() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  // const [nameError,setNameError] = useState("");
-  // const [emailError,setEmailError] = useState("");
-  // const [messageError,setMessageError] = useState("");
+  const validationSchema = Yup.object({
+    name: Yup.string()
+      .min(3, "Name must be at least 3 characters")
+      .max(50, "Name must be less than 50 characters")
+      .required("Name is required"),
+    email: Yup.string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    message: Yup.string()
+      .min(10, "Message must be at least 10 characters")
+      .max(500, "Message must be less than 500 characters")
+      .required("Message is required"),
+  });
 
-  const handleSubmit = () => {};
+  const handleSubmit = (formdata) => {
+    console.log(formdata);
+  };
   return (
     <>
       <div className="md:flex mt-40 md:space-x-10 items-start bg-white rounded-md p-10">
@@ -79,40 +89,59 @@ export default function ContactUs() {
           <br />
           <hr />
           <br />
-          <form className="p-4">
-            <p>FULL NAME *</p>
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              name="name"
-              type="text"
-              className="w-full mb-5 border-none bg-gray-50"
-            />
-            <p>EMAIL *</p>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              type="email"
-              className="w-full mb-5 border-none bg-gray-50"
-            />
-            <p>MESSAGE *</p>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              name="message"
-              id=""
-              rows="4"
-              className="w-full mb-5 border-none bg-gray-50"
-            ></textarea>
-            <button
-              onClick={handleSubmit}
-              type="submit"
-              className="bg-blue-500 text-white w-full h-12 font-mono text-2xl hover:bg-white hover:text-black transition-colors duration-700"
-            >
-              SUBMIT
-            </button>
-          </form>
+          <Formik
+            initialValues={{ name: "", email: "", message: "" }}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
+          >
+            {() => (
+              <Form className="p-4">
+                <p>FULL NAME *</p>
+
+                <Field
+                  name="name"
+                  type="text"
+                  className="w-full  border-none bg-gray-50"
+                />
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className="text-sm text-red-600 "
+                />
+
+                <p className="mt-5">EMAIL *</p>
+                <Field
+                  name="email"
+                  type="email"
+                  className="w-full  border-none bg-gray-50"
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-sm text-red-600 "
+                />
+                <p className="mt-5">MESSAGE *</p>
+                <Field
+                  as="textarea"
+                  name="message"
+                  id=""
+                  rows="4"
+                  className="w-full  border-none bg-gray-50"
+                />
+                <ErrorMessage
+                  name="message"
+                  component="div"
+                  className="text-sm text-red-600 "
+                />
+                <button
+                  type="submit"
+                  className="bg-blue-500 text-white w-full h-12 font-mono text-2xl hover:bg-white hover:text-black transition-colors duration-700"
+                >
+                  SUBMIT
+                </button>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
 
