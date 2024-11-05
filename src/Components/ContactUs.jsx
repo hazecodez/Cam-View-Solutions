@@ -26,7 +26,7 @@ export default function ContactUs() {
   return (
     <>
       <div className="md:flex mt-40 md:space-x-10 items-start bg-white rounded-md p-10">
-        <div data-aos="fade-down" className="md:w-5/12 relative">
+        <div data-aos="fade-down" className="md:w-5/12 relative ">
           <h1 className="text-6xl">Contact</h1>
         </div>
 
