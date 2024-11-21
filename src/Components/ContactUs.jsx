@@ -9,7 +9,7 @@ export default function ContactUs() {
   const validationSchema = Yup.object({
     name: Yup.string()
       .min(3, "Name must be at least 3 characters")
-      .max(50, "Name must be less than 50 characters")
+      .max(50, "Name must be less than 50 characters ")
       .required("Name is required"),
     email: Yup.string()
       .email("Invalid email format")
