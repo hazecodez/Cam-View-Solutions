@@ -4,6 +4,7 @@ import { PiPhoneCallThin } from "react-icons/pi";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
 // import { CiMail } from "react-icons/ci";
 
 export default function ContactUs() {
@@ -21,7 +22,7 @@ export default function ContactUs() {
       .required("Message is required"),
   });
 
-  const handleSubmit = (formdata) => {
+  const handleSubmit = (formdata, { resetForm }) => {
     emailjs
       .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -35,9 +36,14 @@ export default function ContactUs() {
       )
       .then(
         () => {
+          toast.success(
+            "Email sent successfully! The service team will reply to you as soon as possible."
+          );
+          resetForm();
           console.log("SUCCESS!");
         },
         (error) => {
+          toast.error("Failed to send email. Please try again later.");
           console.log("FAILED...", error.text);
         }
       );
