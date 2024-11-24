@@ -3,7 +3,7 @@ import Button from "./Button";
 import { PiPhoneCallThin } from "react-icons/pi";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 // import { CiMail } from "react-icons/ci";
 
@@ -23,30 +23,30 @@ export default function ContactUs() {
   });
 
   const handleSubmit = (formdata, { resetForm }) => {
-    // emailjs
-    //   .send(
-    //     import.meta.env.VITE_EMAILJS_SERVICE_ID,
-    //     import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-    //     {
-    //       name: formdata.name,
-    //       email: formdata.email,
-    //       message: formdata.message,
-    //     },
-    //     import.meta.env.VITE_EMAILJS_PUBLIC_ID
-    //   )
-    //   .then(
-    //     () => {
-    //       toast.success(
-    //         "Email sent successfully! The service team will reply to you as soon as possible."
-    //       );
-    //       resetForm();
-    //       console.log("SUCCESS!");
-    //     },
-    //     (error) => {
-    //       toast.error("Failed to send email. Please try again later.");
-    //       console.log("FAILED...", error.text);
-    //     }
-    //   );
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formdata.name,
+          email: formdata.email,
+          message: formdata.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_ID
+      )
+      .then(
+        () => {
+          toast.success(
+            "Email sent successfully! The service team will reply to you as soon as possible."
+          );
+          resetForm();
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          toast.error("Failed to send email. Please try again later.");
+          console.log("FAILED...", error.text);
+        }
+      );
   };
   return (
     <>
