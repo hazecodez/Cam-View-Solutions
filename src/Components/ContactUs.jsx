@@ -23,6 +23,8 @@ export default function ContactUs() {
   });
 
   const handleSubmit = (formdata, { resetForm }) => {
+    console.log(import.meta.env.VITE_EMAILJS_SERVICE_ID);
+
     emailjs
       .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
