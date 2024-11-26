@@ -51,22 +51,7 @@ export default function Footer() {
                   Pricing & Plans
                 </a>
               </li>
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Changelog
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Our method
-                </a>
-              </li>
+              
             </ul>
           </div>
 
