@@ -2,14 +2,16 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
 import Logo from "./Logo";
 import { FaThreads } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <footer>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Top area: Blocks */}
         <div
-          className={`grid gap-10 py-8 sm:grid-cols-12 md:py-12
+          className={`grid gap-10 py-8 md:py-12
             border-t [border-image:linear-gradient(to_right,transparent,theme(colors.slate.200),transparent)1]
           `}
         >
@@ -23,111 +25,56 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* 2nd block */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Product</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Integrations
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Pricing & Plans
-                </a>
-              </li>
-              
-            </ul>
-          </div>
-
-          {/* 3rd block */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Company</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  About us
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Diversity & Inclusion
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Financial statements
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* 4th block */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Resources</h3>
+            <h3 className="text-sm font-medium">Cam View Solutions LLP</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  onClick={() => navigate("/")}
                 >
-                  Community
+                  Home
                 </a>
               </li>
               <li>
                 <a
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  onClick={() => navigate("/service")}
                 >
-                  Terms of service
+                  Services
                 </a>
               </li>
               <li>
                 <a
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  onClick={() => navigate("/solar")}
                 >
-                  Report a vulnerability
+                  Why Solar?
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  onClick={() => navigate("/projects")}
+                >
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  onClick={() => navigate("/about")}
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-gray-600 transition hover:text-gray-900"
+                  onClick={() => navigate("/contact")}
+                >
+                  Contact
                 </a>
               </li>
             </ul>
@@ -140,7 +87,7 @@ export default function Footer() {
               <li>
                 <a
                   className="flex items-center justify-center text-2xl pr-4 text-blue-500 transition hover:text-blue-600"
-                  href="https://wa.link/c4t9q5"
+                  href="https://wa.link/vthvfv"
                   aria-label="Whatsapp"
                 >
                   <FaWhatsapp />
