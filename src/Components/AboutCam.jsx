@@ -22,7 +22,7 @@ export default function AboutCam() {
             and technology services, including wireless intrusion systems, CCTV
             surveillance, IT security, fiber LAN solutions, solar systems, and
             more. Our expertise ensures reliable and innovative solutions
-            tailored to your needs.
+            tailored to your needs. 
           </p>
           <img
             className="relative rounded-lg z-40 sm:w-5/6 floating pt-8"
