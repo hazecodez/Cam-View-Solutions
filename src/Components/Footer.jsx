@@ -21,7 +21,7 @@ export default function Footer() {
               <Logo />
             </div>
             <div className="text-sm text-gray-600">
-            © 2024 - Cam View Solutions LLP 
+            © 2024 - Cam View Solutions LLP
             </div>
           </div>
 
